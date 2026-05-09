@@ -1,0 +1,13 @@
+# AWS App Runner — source repository only (not used for image-based services).
+# https://docs.aws.amazon.com/apprunner/latest/dg/config-file-ref.html
+version: 1.0
+runtime: nodejs22
+build:
+  commands:
+    build:
+      - npm ci
+      - npm run build
+run:
+  command: npm start
+  network:
+    port: 8080
